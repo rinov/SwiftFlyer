@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1DBAE691201C8D4700996E97 /* ExecutionHistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DBAE690201C8D4700996E97 /* ExecutionHistoryCell.swift */; };
+		1DBAE693201C8D5300996E97 /* ExecutionHistoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DBAE692201C8D5300996E97 /* ExecutionHistoryCell.xib */; };
 		4E1D0A172BFD3B0113B59D43 /* Pods_SwiftFlyer_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF5234AE692960EE2000C099 /* Pods_SwiftFlyer_Example.framework */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
@@ -30,6 +32,8 @@
 /* Begin PBXFileReference section */
 		067955BB567F18CC9364F216 /* Pods_SwiftFlyer_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftFlyer_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C26E662F8390522214D9D35 /* Pods-SwiftFlyer_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftFlyer_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftFlyer_Example/Pods-SwiftFlyer_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		1DBAE690201C8D4700996E97 /* ExecutionHistoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExecutionHistoryCell.swift; sourceTree = "<group>"; };
+		1DBAE692201C8D5300996E97 /* ExecutionHistoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExecutionHistoryCell.xib; sourceTree = "<group>"; };
 		53EA54DEF8FE5026D8B8B0D0 /* Pods-SwiftFlyer_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftFlyer_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftFlyer_Example/Pods-SwiftFlyer_Example.release.xcconfig"; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* SwiftFlyer_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftFlyer_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -41,12 +45,12 @@
 		607FACE51AFB9204008FA782 /* SwiftFlyer_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftFlyer_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
-		9FDD5B242DBB417DC4748C15 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		9FDD5B242DBB417DC4748C15 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		BD63FEFE4959D4328F3D5EB4 /* Pods-SwiftFlyer_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftFlyer_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftFlyer_Tests/Pods-SwiftFlyer_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		C08A3A4F508106C600E9729D /* Pods-SwiftFlyer_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftFlyer_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftFlyer_Tests/Pods-SwiftFlyer_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		EAFEA9E529612DBA4F3A8A87 /* SwiftFlyer.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = SwiftFlyer.podspec; path = ../SwiftFlyer.podspec; sourceTree = "<group>"; };
+		EAFEA9E529612DBA4F3A8A87 /* SwiftFlyer.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = SwiftFlyer.podspec; path = ../SwiftFlyer.podspec; sourceTree = "<group>"; };
 		EF5234AE692960EE2000C099 /* Pods_SwiftFlyer_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftFlyer_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		FF816D15DD89B3D6FE2FE453 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		FF816D15DD89B3D6FE2FE453 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,12 +85,12 @@
 		607FACC71AFB9204008FA782 = {
 			isa = PBXGroup;
 			children = (
-				607FACF51AFB993E008FA782 /* Podspec Metadata */,
 				607FACD21AFB9204008FA782 /* Example for SwiftFlyer */,
-				607FACE81AFB9204008FA782 /* Tests */,
-				607FACD11AFB9204008FA782 /* Products */,
-				B098F46ECDDFCCCA9C9382EF /* Pods */,
 				58AA5AEA44054F023128EA1C /* Frameworks */,
+				B098F46ECDDFCCCA9C9382EF /* Pods */,
+				607FACF51AFB993E008FA782 /* Podspec Metadata */,
+				607FACD11AFB9204008FA782 /* Products */,
+				607FACE81AFB9204008FA782 /* Tests */,
 			);
 			sourceTree = "<group>";
 		};
@@ -102,12 +106,14 @@
 		607FACD21AFB9204008FA782 /* Example for SwiftFlyer */ = {
 			isa = PBXGroup;
 			children = (
+				607FACD31AFB9204008FA782 /* Supporting Files */,
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
-				607FACD71AFB9204008FA782 /* ViewController.swift */,
-				607FACD91AFB9204008FA782 /* Main.storyboard */,
+				1DBAE690201C8D4700996E97 /* ExecutionHistoryCell.swift */,
+				1DBAE692201C8D5300996E97 /* ExecutionHistoryCell.xib */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
-				607FACD31AFB9204008FA782 /* Supporting Files */,
+				607FACD91AFB9204008FA782 /* Main.storyboard */,
+				607FACD71AFB9204008FA782 /* ViewController.swift */,
 			);
 			name = "Example for SwiftFlyer";
 			path = SwiftFlyer;
@@ -124,8 +130,8 @@
 		607FACE81AFB9204008FA782 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				607FACEB1AFB9204008FA782 /* Tests.swift */,
 				607FACE91AFB9204008FA782 /* Supporting Files */,
+				607FACEB1AFB9204008FA782 /* Tests.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -141,9 +147,9 @@
 		607FACF51AFB993E008FA782 /* Podspec Metadata */ = {
 			isa = PBXGroup;
 			children = (
-				EAFEA9E529612DBA4F3A8A87 /* SwiftFlyer.podspec */,
-				9FDD5B242DBB417DC4748C15 /* README.md */,
 				FF816D15DD89B3D6FE2FE453 /* LICENSE */,
+				9FDD5B242DBB417DC4748C15 /* README.md */,
+				EAFEA9E529612DBA4F3A8A87 /* SwiftFlyer.podspec */,
 			);
 			name = "Podspec Metadata";
 			sourceTree = "<group>";
@@ -248,9 +254,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */,
-				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
+				1DBAE693201C8D5300996E97 /* ExecutionHistoryCell.xib in Resources */,
 				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
+				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
+				607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -361,8 +368,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
+				1DBAE691201C8D4700996E97 /* ExecutionHistoryCell.swift in Sources */,
+				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -449,11 +457,12 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -495,10 +504,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;

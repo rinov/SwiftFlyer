@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CELL" rowHeight="75" id="N5n-tN-4Ku" customClass="ExecutionHistoryCell" customModule="SwiftFlyer_Example" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="403" height="75"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="N5n-tN-4Ku" id="kJp-Dk-BMX">
+                <rect key="frame" x="0.0" y="0.0" width="403" height="74.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="ABM-ZO-2di">
+                        <rect key="frame" x="5" y="0.0" width="393" height="74.5"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Side" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LMD-AU-zMN">
+                                <rect key="frame" x="0.0" y="0.0" width="98.5" height="74.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BmU-I6-qmf">
+                                <rect key="frame" x="98.5" y="0.0" width="98" height="74.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Size" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1I4-2w-jDK">
+                                <rect key="frame" x="196.5" y="0.0" width="98.5" height="74.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ExecDate" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lrg-u7-VPY">
+                                <rect key="frame" x="295" y="0.0" width="98" height="74.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                    </stackView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="ABM-ZO-2di" firstAttribute="leading" secondItem="kJp-Dk-BMX" secondAttribute="leading" constant="5" id="Gh5-um-yQP"/>
+                    <constraint firstItem="ABM-ZO-2di" firstAttribute="top" secondItem="kJp-Dk-BMX" secondAttribute="top" id="kfz-YO-lMD"/>
+                    <constraint firstAttribute="trailing" secondItem="ABM-ZO-2di" secondAttribute="trailing" constant="5" id="x3X-Uq-Gsb"/>
+                    <constraint firstAttribute="bottom" secondItem="ABM-ZO-2di" secondAttribute="bottom" id="zvW-IX-8TC"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="execDate" destination="Lrg-u7-VPY" id="4gt-GS-G6L"/>
+                <outlet property="price" destination="BmU-I6-qmf" id="JHy-qo-yDT"/>
+                <outlet property="side" destination="LMD-AU-zMN" id="Ge1-4O-TXH"/>
+                <outlet property="size" destination="1I4-2w-jDK" id="kna-Ud-ODE"/>
+            </connections>
+            <point key="canvasLocation" x="-154.5" y="37.5"/>
+        </tableViewCell>
+    </objects>
+</document>

@@ -2,45 +2,48 @@
 //  AppDelegate.swift
 //  SwiftFlyer
 //
-//  Created by service@abema.tv on 12/31/2017.
-//  Copyright (c) 2017 service@abema.tv. All rights reserved.
+//  Created by Ryo Ishikawa on 2018/01/27.
+//  Copyright (c) 2017 Ryo Ishikawa. All rights reserved.
 //
 
 import UIKit
+import SwiftFlyer
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+
+        // For access private API.
+        BitFyler.apiKey = "Your API Key"
+        BitFyler.apiSecretKey = "Your API Secret Key"
+
+        // These are optional settings.
+        // If you want retrive realtime information from PubNub, set channels and call `subscribe` of RealTimeAPI.
+        typealias Channel = RealTimeAPI.SubscribeChannel
+
+        // Set channels for subscribing realtime api from PubNub.
+        let subscribeChannels: [PubNubSubscribable] = [
+//            Channel.Ticker.ticker_fx_btc_jpy
+        ]
+
+        // Start observing realtime api.
+        RealTimeAPI.shared.subscribe(with: subscribeChannels)
+        
         return true
     }
 
-    func applicationWillResignActive(_ application: UIApplication) {
-        // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-        // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
-    }
+    func applicationWillResignActive(_ application: UIApplication) {}
 
-    func applicationDidEnterBackground(_ application: UIApplication) {
-        // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
-        // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
-    }
+    func applicationDidEnterBackground(_ application: UIApplication) {}
 
-    func applicationWillEnterForeground(_ application: UIApplication) {
-        // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
-    }
+    func applicationWillEnterForeground(_ application: UIApplication) {}
 
-    func applicationDidBecomeActive(_ application: UIApplication) {
-        // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-    }
+    func applicationDidBecomeActive(_ application: UIApplication) {}
 
-    func applicationWillTerminate(_ application: UIApplication) {
-        // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
-    }
-
+    func applicationWillTerminate(_ application: UIApplication) {}
 
 }
 

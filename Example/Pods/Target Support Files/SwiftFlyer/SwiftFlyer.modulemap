@@ -1,0 +1,6 @@
+framework module SwiftFlyer {
+  umbrella header "SwiftFlyer-umbrella.h"
+
+  export *
+  module * { export * }
+}

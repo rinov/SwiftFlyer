@@ -20,8 +20,23 @@
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="pHg-SQ-0oU">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="pHg-SQ-0oU" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="41W-LJ-p7T"/>
+                            <constraint firstAttribute="trailing" secondItem="pHg-SQ-0oU" secondAttribute="trailing" id="gE9-Qo-5kh"/>
+                            <constraint firstItem="pHg-SQ-0oU" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="lmz-Oh-jvz"/>
+                            <constraint firstAttribute="bottom" secondItem="pHg-SQ-0oU" secondAttribute="bottom" id="s5K-6D-Bqu"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="pHg-SQ-0oU" id="Vxa-pX-vch"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
