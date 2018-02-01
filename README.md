@@ -46,26 +46,17 @@ Response:
 
 ### Private API
 
-In your AppDelegate.swift, you should set following keys.
-
 Generate API keys: https://lightning.bitflyer.jp/developer
-
-```swift
-func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-
-    // For access private API.
-    BitFyler.apiKey = // Your API Key
-    BitFyler.apiSecretKey = // Your API Secret Key
-
-    ...
-}
-
-```
 
 Check your balance.
 
 ```swift
 import SwiftFlyer
+...
+
+// For access private API.
+BitFyler.apiKey = // Your API Key
+BitFyler.apiSecretKey = // Your API Secret Key
 
 let request = GetBalanceRequest()
 
