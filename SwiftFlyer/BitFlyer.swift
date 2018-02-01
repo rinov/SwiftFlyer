@@ -15,9 +15,6 @@ public final class BitFyler {
         public static let maximumApiCallPerIP = 500
     }
     
-    public static let shared = BitFyler()
     public static var apiKey = ""
     public static var apiSecretKey = ""
-    
-    private init() {}
 }
