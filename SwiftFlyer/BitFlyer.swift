@@ -8,7 +8,7 @@
 
 import Foundation
 
-public final class BitFyler {
+public final class BitFlyer {
 
     public enum Const {
         public static let maximumPrivateApiCallPerMinute = 200

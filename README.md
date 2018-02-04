@@ -55,8 +55,8 @@ import SwiftFlyer
 ...
 
 // For access private API.
-BitFyler.apiKey = // Your API Key
-BitFyler.apiSecretKey = // Your API Secret Key
+BitFlyer.apiKey = // Your API Key
+BitFlyer.apiSecretKey = // Your API Secret Key
 
 let request = GetBalanceRequest()
 
@@ -86,7 +86,7 @@ Response:
 
 ### RealTime API
 
-Set PubNub configration by using RealTImeAPi in your AppDelegate.swift.
+Set PubNub configration by using RealTImeAPI in your AppDelegate.swift.
 
 ```swift
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {

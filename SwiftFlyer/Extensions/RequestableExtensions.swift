@@ -47,9 +47,9 @@ public extension Requestable {
         if isAuthorizedRequest {
             let timeStamp = String(Date().timeIntervalSince1970)
             header["Content-Type"] = "application/json"
-            header["ACCESS-KEY"] = BitFyler.apiKey
+            header["ACCESS-KEY"] = BitFlyer.apiKey
             header["ACCESS-TIMESTAMP"] = timeStamp
-            header["ACCESS-SIGN"] = makeAccessSignWith(accessKey: BitFyler.apiKey,
+            header["ACCESS-SIGN"] = makeAccessSignWith(accessKey: BitFlyer.apiKey,
                                                        timeStamp: timeStamp,
                                                        method: httpMethod,
                                                        path: path,
@@ -99,7 +99,7 @@ public extension Requestable {
         }
         
         // Encrypt with HMAC sha256.
-        let signedString = try? HMAC(key: BitFyler.apiSecretKey, variant: .sha256).authenticate(bytes)
+        let signedString = try? HMAC(key: BitFlyer.apiSecretKey, variant: .sha256).authenticate(bytes)
         
         return signedString?.toHexString()
     }

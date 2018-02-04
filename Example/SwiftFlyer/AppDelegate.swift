@@ -17,8 +17,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
         // For access private API.
-        BitFyler.apiKey = "Your API Key"
-        BitFyler.apiSecretKey = "Your API Secret Key"
+        BitFlyer.apiKey = "Your API Key"
+        BitFlyer.apiSecretKey = "Your API Secret Key"
 
         // These are optional settings.
         // If you want retrive realtime information from PubNub, set channels and call `subscribe` of RealTimeAPI.
