@@ -16,6 +16,11 @@ public struct BoardState: Codable {
         self.healthState = healthState
         self.tradeState = tradeState
     }
+
+    public enum CodingKeys: String, CodingKey {
+        case healthState = "health"
+        case tradeState = "state"
+    }
 }
 
 extension BoardState: Equatable {
