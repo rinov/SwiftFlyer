@@ -1,13 +1,13 @@
 PODS:
-  - CryptoSwift (0.8.0)
+  - CryptoSwift (0.8.1)
   - Nimble (7.0.3)
-  - PubNub (4.7.4):
-    - PubNub/Core (= 4.7.4)
-  - PubNub/Core (4.7.4)
+  - PubNub (4.7.6):
+    - PubNub/Core (= 4.7.6)
+  - PubNub/Core (4.7.6)
   - Quick (1.2.0)
-  - SwiftFlyer (0.1.2):
+  - SwiftFlyer (0.1.3):
     - CryptoSwift (~> 0.8.0)
-    - PubNub (~> 4.1)
+    - PubNub (~> 4.7)
 
 DEPENDENCIES:
   - Nimble (~> 7.0.2)
@@ -19,11 +19,11 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  CryptoSwift: f81907430ebbe38b8404b4f6fb40f3c576a8755f
+  CryptoSwift: 4b07d5b508c1eb67bfa314a727b705f8048a85de
   Nimble: 7f5a9c447a33002645a071bddafbfb24ea70e0ac
-  PubNub: de3a84200472d2fadfc7cf79622444a837a24b42
+  PubNub: f788c31977e6ef52c88a7080d7d6d30f896c43b2
   Quick: 58d203b1c5e27fff7229c4c1ae445ad7069a7a08
-  SwiftFlyer: eb42423679a70226d886d960642886b0e0c0267e
+  SwiftFlyer: 5b23b0f60967af8923d39593d552364595f62736
 
 PODFILE CHECKSUM: 0e2e09933c4a5d391753b4d68ab707c15f8357d7
 

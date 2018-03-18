@@ -27,6 +27,7 @@
 #import "PNPresenceAPICallBuilder.h"
 #import "PNPresenceChannelGroupHereNowAPICallBuilder.h"
 #import "PNPresenceChannelHereNowAPICallBuilder.h"
+#import "PNPresenceHeartbeatAPICallBuilder.h"
 #import "PNPresenceHereNowAPICallBuilder.h"
 #import "PNPresenceWhereNowAPICallBuilder.h"
 #import "PNPublishAPICallBuilder.h"
