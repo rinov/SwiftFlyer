@@ -22,7 +22,7 @@
   "source_files": "SwiftFlyer/**/*",
   "dependencies": {
     "CryptoSwift": [
-      "~> 0.8.0"
+      "~> 0.8"
     ],
     "PubNub": [
       "~> 4.7"

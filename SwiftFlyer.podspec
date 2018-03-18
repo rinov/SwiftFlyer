@@ -14,6 +14,6 @@ An API wrapper for bitFlyer that supports all providing API.
   s.ios.deployment_target = '9.0'
   s.osx.deployment_target = '10.11'
   s.source_files = 'SwiftFlyer/**/*'
-  s.dependency 'CryptoSwift', '~> 0.8.0'
+  s.dependency 'CryptoSwift', '~> 0.8'
   s.dependency 'PubNub', '~> 4.7'
 end
