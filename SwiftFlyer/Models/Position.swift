@@ -52,7 +52,6 @@ extension Position: Equatable {
         return lhs.commission == rhs.commission
             && lhs.leverage == rhs.leverage
             && lhs.openDate == rhs.openDate
-            && lhs.pnl == rhs.pnl
             && lhs.price == rhs.price
             && lhs.productCode == rhs.productCode
             && lhs.requireCollateral == rhs.requireCollateral

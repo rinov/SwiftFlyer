@@ -44,7 +44,7 @@ public final class PostChildOrderRequest: Requestable {
     public let childOrderType: ChildOrderType
     public let side: PositionSide
     public let price: Double?
-    public let size: Double
+    public let size: Float
     public let minuteToExpire: Int?
     public let timeInForce: TimeInForce?
     
@@ -52,7 +52,7 @@ public final class PostChildOrderRequest: Requestable {
                 childOrderType: ChildOrderType,
                 side: PositionSide,
                 price: Double?,
-                size: Double,
+                size: Float,
                 minuteToExpire: Int? = nil,
                 timeInForce: TimeInForce? = nil
                 ) {

@@ -32,8 +32,6 @@ public struct Collateral: Codable {
 extension Collateral: Equatable {
     public static func ==(lhs: Collateral, rhs: Collateral) -> Bool {
         return lhs.collateral == rhs.collateral
-            && lhs.keepRate == rhs.keepRate
-            && lhs.openPositionPnl == rhs.openPositionPnl
             && lhs.requireCollateral == rhs.requireCollateral
     }
 }
