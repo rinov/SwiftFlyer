@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'SwiftFlyer'
-  s.version          = '0.1.3'
+  s.version          = '0.2.0'
   s.summary          = 'An API wrapper for bitFlyer written in Swift.'
 
   s.description      = <<-DESC
@@ -15,5 +15,5 @@ An API wrapper for bitFlyer that supports all providing API.
   s.osx.deployment_target = '10.11'
   s.source_files = 'SwiftFlyer/**/*'
   s.dependency 'CryptoSwift', '~> 0.8'
-  s.dependency 'PubNub', '~> 4.7'
+  s.dependency 'SwiftWebSocket', '~> 2.7'
 end
