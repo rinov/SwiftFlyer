@@ -1,5 +1,4 @@
 //
-//  AES.swift
 //  CryptoSwift
 //
 //  Copyright (C) 2014-2017 Marcin Krzyżanowski <marcin@krzyzanowskim.com>
@@ -19,7 +18,6 @@
 
 /// The Advanced Encryption Standard (AES)
 public final class AES: BlockCipher {
-
     public enum Error: Swift.Error {
         /// Data padding is required
         case dataPaddingRequired
@@ -48,9 +46,10 @@ public final class AES: BlockCipher {
     private lazy var variantNk: Int = self.variant.Nk
 
     public static let blockSize: Int = 16 // 128 /8
+    public let keySize: Int
 
     public var variant: Variant {
-        switch key.count * 8 {
+        switch keySize * 8 {
         case 128:
             return .aes128
         case 192:
@@ -125,6 +124,7 @@ public final class AES: BlockCipher {
         self.key = Key(bytes: key)
         self.blockMode = blockMode
         self.padding = padding
+        keySize = self.key.count
     }
 
     internal func encrypt(block: ArraySlice<UInt8>) -> Array<UInt8>? {
@@ -161,10 +161,10 @@ public final class AES: BlockCipher {
 
         let tLength = 4
         let t = UnsafeMutablePointer<UInt32>.allocate(capacity: tLength)
-        t.initialize(to: 0, count: tLength)
+        t.initialize(repeating: 0, count: tLength)
         defer {
             t.deinitialize(count: tLength)
-            t.deallocate(capacity: tLength)
+            t.deallocate()
         }
 
         for r in 0..<rounds - 1 {
@@ -256,10 +256,10 @@ public final class AES: BlockCipher {
 
         let tLength = 4
         let t = UnsafeMutablePointer<UInt32>.allocate(capacity: tLength)
-        t.initialize(to: 0, count: tLength)
+        t.initialize(repeating: 0, count: tLength)
         defer {
             t.deinitialize(count: tLength)
-            t.deallocate(capacity: tLength)
+            t.deallocate()
         }
 
         for r in (2...rounds).reversed() {
@@ -330,7 +330,7 @@ public final class AES: BlockCipher {
             UInt8(b1 & 0xff), UInt8((b1 >> 8) & 0xff), UInt8((b1 >> 16) & 0xff), UInt8((b1 >> 24) & 0xff),
             UInt8(b2 & 0xff), UInt8((b2 >> 8) & 0xff), UInt8((b2 >> 16) & 0xff), UInt8((b2 >> 24) & 0xff),
             UInt8(b3 & 0xff), UInt8((b3 >> 8) & 0xff), UInt8((b3 >> 16) & 0xff), UInt8((b3 >> 24) & 0xff),
-            ]
+        ]
         return result
     }
 }
@@ -355,7 +355,6 @@ private extension AES {
     }
 
     private func expandKey(_ key: Key, variant _: Variant) -> Array<Array<UInt32>> {
-
         func convertExpandedKey(_ expanded: Array<UInt8>) -> Array<Array<UInt32>> {
             return expanded.batched(by: 4).map({ UInt32(bytes: $0.reversed()) }).batched(by: 4).map({ Array($0) })
         }
@@ -386,10 +385,10 @@ private extension AES {
 
         let wLength = variantNb * (variantNr + 1) * 4
         let w = UnsafeMutablePointer<UInt8>.allocate(capacity: wLength)
-        w.initialize(to: 0, count: wLength)
+        w.initialize(repeating: 0, count: wLength)
         defer {
             w.deinitialize(count: wLength)
-            w.deallocate(capacity: wLength)
+            w.deallocate()
         }
 
         for i in 0..<variantNk {
@@ -455,13 +454,13 @@ private extension AES {
         let sboxLength = 256
         let sbox = UnsafeMutablePointer<UInt32>.allocate(capacity: sboxLength)
         let invsbox = UnsafeMutablePointer<UInt32>.allocate(capacity: sboxLength)
-        sbox.initialize(to: 0, count: sboxLength)
-        invsbox.initialize(to: 0, count: sboxLength)
+        sbox.initialize(repeating: 0, count: sboxLength)
+        invsbox.initialize(repeating: 0, count: sboxLength)
         defer {
             sbox.deinitialize(count: sboxLength)
-            sbox.deallocate(capacity: sboxLength)
+            sbox.deallocate()
             invsbox.deinitialize(count: sboxLength)
-            invsbox.deallocate(capacity: sboxLength)
+            invsbox.deallocate()
         }
 
         sbox[0] = 0x63
@@ -486,12 +485,12 @@ private extension AES {
 }
 
 // MARK: Cipher
-extension AES: Cipher {
 
+extension AES: Cipher {
     public func encrypt(_ bytes: ArraySlice<UInt8>) throws -> Array<UInt8> {
         let chunks = bytes.batched(by: AES.blockSize)
 
-        var oneTimeCryptor = try self.makeEncryptor()
+        var oneTimeCryptor = try makeEncryptor()
         var out = Array<UInt8>(reserveCapacity: bytes.count)
         for chunk in chunks {
             out += try oneTimeCryptor.update(withBytes: chunk, isLast: false)
@@ -511,7 +510,7 @@ extension AES: Cipher {
             throw Error.dataPaddingRequired
         }
 
-        var oneTimeCryptor = try self.makeDecryptor()
+        var oneTimeCryptor = try makeDecryptor()
         let chunks = bytes.batched(by: AES.blockSize)
         if chunks.isEmpty {
             throw Error.invalidData

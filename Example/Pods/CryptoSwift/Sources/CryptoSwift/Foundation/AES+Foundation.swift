@@ -1,5 +1,4 @@
 //
-//  AES+Foundation.swift
 //  CryptoSwift
 //
 //  Copyright (C) 2014-2017 Marcin Krzyżanowski <marcin@krzyzanowskim.com>
@@ -17,7 +16,6 @@
 import Foundation
 
 extension AES {
-
     /// Initialize with CBC block mode.
     public convenience init(key: String, iv: String, padding: Padding = .pkcs7) throws {
         try self.init(key: key.bytes, blockMode: .CBC(iv: iv.bytes), padding: padding)

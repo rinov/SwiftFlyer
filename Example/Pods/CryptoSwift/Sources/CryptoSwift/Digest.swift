@@ -1,5 +1,4 @@
 //
-//  Hash.swift
 //  CryptoSwift
 //
 //  Copyright (C) 2014-2017 Marcin Krzyżanowski <marcin@krzyzanowskim.com>
@@ -19,7 +18,6 @@ public typealias Hash = Digest
 
 /// Hash functions to calculate Digest.
 public struct Digest {
-
     /// Calculate MD5 Digest
     /// - parameter bytes: input message
     /// - returns: Digest bytes

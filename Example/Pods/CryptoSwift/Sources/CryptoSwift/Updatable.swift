@@ -1,5 +1,4 @@
 //
-//  Updatable.swift
 //  CryptoSwift
 //
 //  Copyright (C) 2014-2017 Marcin Krzyżanowski <marcin@krzyzanowskim.com>
@@ -46,7 +45,6 @@ public protocol Updatable {
 }
 
 extension Updatable {
-
     public mutating func update(withBytes bytes: ArraySlice<UInt8>, isLast: Bool = false, output: (_ bytes: Array<UInt8>) -> Void) throws {
         let processed = try update(withBytes: bytes, isLast: isLast)
         if !processed.isEmpty {
@@ -54,10 +52,12 @@ extension Updatable {
         }
     }
 
+    @discardableResult
     public mutating func finish(withBytes bytes: ArraySlice<UInt8>) throws -> Array<UInt8> {
         return try update(withBytes: bytes, isLast: true)
     }
 
+    @discardableResult
     public mutating func finish() throws -> Array<UInt8> {
         return try update(withBytes: [], isLast: true)
     }
@@ -75,7 +75,7 @@ extension Updatable {
 }
 
 extension Updatable {
-
+    @discardableResult
     public mutating func update(withBytes bytes: Array<UInt8>, isLast: Bool = false) throws -> Array<UInt8> {
         return try update(withBytes: bytes.slice, isLast: isLast)
     }
@@ -84,6 +84,7 @@ extension Updatable {
         return try update(withBytes: bytes.slice, isLast: isLast, output: output)
     }
 
+    @discardableResult
     public mutating func finish(withBytes bytes: Array<UInt8>) throws -> Array<UInt8> {
         return try finish(withBytes: bytes.slice)
     }

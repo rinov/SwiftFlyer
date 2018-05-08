@@ -1,5 +1,4 @@
 //
-//  Collection+Extension.swift
 //  CryptoSwift
 //
 //  Copyright (C) 2014-2017 Marcin Krzyżanowski <marcin@krzyzanowskim.com>
@@ -14,7 +13,6 @@
 //  - This notice may not be removed or altered from any source or binary distribution.
 //
 extension Collection where Self.Element == UInt8, Self.Index == Int {
-
     // Big endian order
     func toUInt32Array() -> Array<UInt32> {
         if isEmpty {

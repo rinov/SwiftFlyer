@@ -1,5 +1,4 @@
 //
-//  StringExtension.swift
 //  CryptoSwift
 //
 //  Copyright (C) 2014-2017 Marcin Krzyżanowski <marcin@krzyzanowskim.com>
@@ -16,7 +15,6 @@
 
 /** String extension */
 extension String {
-
     public var bytes: Array<UInt8> {
         return data(using: String.Encoding.utf8, allowLossyConversion: true)?.bytes ?? Array(utf8)
     }

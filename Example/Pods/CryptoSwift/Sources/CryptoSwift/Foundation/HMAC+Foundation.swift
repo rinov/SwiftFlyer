@@ -1,5 +1,4 @@
 //
-//  HMAC+Foundation.swift
 //  CryptoSwift
 //
 //  Copyright (C) 2014-2017 Marcin Krzyżanowski <marcin@krzyzanowskim.com>
@@ -17,7 +16,6 @@
 import Foundation
 
 extension HMAC {
-
     public convenience init(key: String, variant: HMAC.Variant = .md5) throws {
         self.init(key: key.bytes, variant: variant)
     }

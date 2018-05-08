@@ -1,5 +1,4 @@
 //
-//  Array+Foundation.swift
 //  CryptoSwift
 //
 //  Copyright (C) 2014-2017 Marcin Krzyżanowski <marcin@krzyzanowskim.com>
@@ -17,7 +16,6 @@
 import Foundation
 
 public extension Array where Element == UInt8 {
-
     public func toBase64() -> String? {
         return Data(bytes: self).base64EncodedString()
     }

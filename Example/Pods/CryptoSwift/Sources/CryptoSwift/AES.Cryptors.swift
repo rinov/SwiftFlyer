@@ -1,5 +1,4 @@
 //
-//  AES.swift
 //  CryptoSwift
 //
 //  Copyright (C) 2014-2017 Marcin Krzyżanowski <marcin@krzyzanowskim.com>
@@ -15,6 +14,7 @@
 //
 
 // MARK: Cryptors
+
 extension AES: Cryptors {
     public func makeEncryptor() throws -> AES.Encryptor {
         return try AES.Encryptor(aes: self)
@@ -26,6 +26,7 @@ extension AES: Cryptors {
 }
 
 // MARK: Encryptor
+
 extension AES {
     public struct Encryptor: Updatable {
         private var worker: BlockModeWorker
@@ -63,8 +64,8 @@ extension AES {
 }
 
 // MARK: Decryptor
-extension AES {
 
+extension AES {
     public struct Decryptor: RandomAccessCryptor {
         private var worker: BlockModeWorker
         private let padding: Padding
@@ -90,7 +91,7 @@ extension AES {
         }
 
         public mutating func update(withBytes bytes: ArraySlice<UInt8>, isLast: Bool = false) throws -> Array<UInt8> {
-            // prepend "offset" number of bytes at the begining
+            // prepend "offset" number of bytes at the beginning
             if offset > 0 {
                 accumulated += Array<UInt8>(repeating: 0, count: offset) + bytes
                 offsetToRemove = offset

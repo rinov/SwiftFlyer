@@ -1,5 +1,4 @@
 //
-//  Checksum.swift
 //  CryptoSwift
 //
 //  Copyright (C) 2014-2017 Marcin Krzyżanowski <marcin@krzyzanowskim.com>
@@ -109,8 +108,8 @@ public final class Checksum {
 }
 
 // MARK: Public interface
-public extension Checksum {
 
+public extension Checksum {
     /// Calculate CRC32
     ///
     /// - parameter message: Message

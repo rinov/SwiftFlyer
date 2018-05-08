@@ -1,5 +1,4 @@
 //
-//  ChaCha20+Foundation.swift
 //  CryptoSwift
 //
 //  Copyright (C) 2014-2017 Marcin Krzyżanowski <marcin@krzyzanowskim.com>
@@ -17,7 +16,6 @@
 import Foundation
 
 extension ChaCha20 {
-
     public convenience init(key: String, iv: String) throws {
         try self.init(key: key.bytes, iv: iv.bytes)
     }

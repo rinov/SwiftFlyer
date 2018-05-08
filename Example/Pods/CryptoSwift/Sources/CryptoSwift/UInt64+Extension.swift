@@ -1,5 +1,4 @@
 //
-//  UInt64Extension.swift
 //  CryptoSwift
 //
 //  Copyright (C) 2014-2017 Marcin Krzyżanowski <marcin@krzyzanowskim.com>
@@ -16,7 +15,6 @@
 
 /** array of bytes */
 extension UInt64 {
-
     @_specialize(exported: true, where T == ArraySlice<UInt8>)
     init<T: Collection>(bytes: T) where T.Element == UInt8, T.Index == Int {
         self = UInt64(bytes: bytes, fromIndex: bytes.startIndex)

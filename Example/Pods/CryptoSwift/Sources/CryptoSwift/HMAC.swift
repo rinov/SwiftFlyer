@@ -1,5 +1,4 @@
 //
-//  HMAC.swift
 //  CryptoSwift
 //
 //  Copyright (C) 2014-2017 Marcin Krzyżanowski <marcin@krzyzanowskim.com>
@@ -15,7 +14,6 @@
 //
 
 public final class HMAC: Authenticator {
-
     public enum Error: Swift.Error {
         case authenticateError
         case invalidInput
