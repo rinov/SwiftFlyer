@@ -14,6 +14,7 @@
 //
 
 public final class HMAC: Authenticator {
+
     public enum Error: Swift.Error {
         case authenticateError
         case invalidInput

@@ -45,6 +45,7 @@ public protocol Updatable {
 }
 
 extension Updatable {
+
     public mutating func update(withBytes bytes: ArraySlice<UInt8>, isLast: Bool = false, output: (_ bytes: Array<UInt8>) -> Void) throws {
         let processed = try update(withBytes: bytes, isLast: isLast)
         if !processed.isEmpty {
@@ -75,6 +76,7 @@ extension Updatable {
 }
 
 extension Updatable {
+
     @discardableResult
     public mutating func update(withBytes bytes: Array<UInt8>, isLast: Bool = false) throws -> Array<UInt8> {
         return try update(withBytes: bytes.slice, isLast: isLast)

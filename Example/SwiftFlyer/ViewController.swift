@@ -27,7 +27,7 @@ final class ViewController: UIViewController, UITableViewDelegate, UITableViewDa
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Set realtime api delegate for get your setted object from PubNub.
+        // Set realtime api delegate for get your setted object.
         realtime.delegate = self
 
         // Fetch execution histories from bitFlyer lightning(FX).

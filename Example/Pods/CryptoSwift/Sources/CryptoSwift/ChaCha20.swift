@@ -17,12 +17,12 @@
 //
 
 public final class ChaCha20: BlockCipher {
+
     public enum Error: Swift.Error {
         case invalidKeyOrInitializationVector
     }
 
     public static let blockSize = 64 // 512 / 8
-    public let keySize: Int
 
     fileprivate let key: Key
     fileprivate var counter: Array<UInt8>
@@ -35,7 +35,6 @@ public final class ChaCha20: BlockCipher {
         }
 
         self.key = Key(bytes: key)
-        keySize = self.key.count
 
         if nonce.count == 8 {
             counter = [0, 0, 0, 0, 0, 0, 0, 0] + nonce
@@ -223,7 +222,7 @@ public final class ChaCha20: BlockCipher {
             var u: UInt32 = 1
             for i in 0..<4 {
                 u += UInt32(counter[i])
-                counter[i] = UInt8(u & 0xff)
+                counter[i] = UInt8(u & 0xFF)
                 u >>= 8
             }
             bytesSlice = bytesSlice[bytesSlice.startIndex + ChaCha20.blockSize..<bytesSlice.endIndex]
@@ -240,8 +239,8 @@ public final class ChaCha20: BlockCipher {
 }
 
 // MARK: Cipher
-
 extension ChaCha20: Cipher {
+
     public func encrypt(_ bytes: ArraySlice<UInt8>) throws -> Array<UInt8> {
         return process(bytes: bytes, counter: &counter, key: Array(key))
     }
@@ -252,8 +251,8 @@ extension ChaCha20: Cipher {
 }
 
 // MARK: Encryptor
-
 extension ChaCha20 {
+
     public struct Encryptor: Updatable {
         private var accumulated = Array<UInt8>()
         private let chacha: ChaCha20
@@ -279,8 +278,8 @@ extension ChaCha20 {
 }
 
 // MARK: Decryptor
-
 extension ChaCha20 {
+
     public struct Decryptor: Updatable {
         private var accumulated = Array<UInt8>()
 
@@ -324,8 +323,8 @@ extension ChaCha20 {
 }
 
 // MARK: Cryptors
-
 extension ChaCha20: Cryptors {
+
     public func makeEncryptor() -> ChaCha20.Encryptor {
         return Encryptor(chacha: self)
     }

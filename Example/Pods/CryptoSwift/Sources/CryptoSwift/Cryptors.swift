@@ -35,6 +35,7 @@ public protocol Cryptors: class {
 }
 
 extension Cryptors {
+
     public static func randomIV(_ blockSize: Int) -> Array<UInt8> {
         var randomIV: Array<UInt8> = Array<UInt8>()
         randomIV.reserveCapacity(blockSize)

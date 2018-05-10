@@ -1,9 +1,9 @@
 PODS:
-  - CryptoSwift (0.9.0)
+  - CryptoSwift (0.8.3)
   - Nimble (7.0.3)
   - Quick (1.2.0)
   - SwiftFlyer (0.2.0):
-    - CryptoSwift (~> 0.8)
+    - CryptoSwift (~> 0.8.3)
     - SwiftWebSocket (~> 2.7)
   - SwiftWebSocket (2.7.0)
 
@@ -17,10 +17,10 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  CryptoSwift: bca8c5b653dcc2d9734409242a070ff53bafac86
+  CryptoSwift: 033efc3523865d19cc6ab6612fa17a62613b5dfa
   Nimble: 7f5a9c447a33002645a071bddafbfb24ea70e0ac
   Quick: 58d203b1c5e27fff7229c4c1ae445ad7069a7a08
-  SwiftFlyer: 24de2f709a4d3aeeeaff1c32070aeccb1031f728
+  SwiftFlyer: 59abc0ef0b8627a8d9895b60037c4e63db559899
   SwiftWebSocket: 612c9729fd503cb6b0b8b45390c788686dac306f
 
 PODFILE CHECKSUM: 0e2e09933c4a5d391753b4d68ab707c15f8357d7

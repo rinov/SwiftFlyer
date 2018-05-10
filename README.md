@@ -84,21 +84,22 @@ Response:
 ]
 ```
 
-### RealTime API
+### RealTime API (JSON RPC over WebSocket)
 
-Set PubNub configration by using RealTImeAPI in your AppDelegate.swift.
+Use RealTImeAPI in your project.
 
 ```swift
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
+    // If you want retrive realtime information, set channels and call `subscribe` of RealTimeAPI.
     typealias Channel = RealTimeAPI.SubscribeChannel
 
-    // Set channels for subscribing realtime API from PubNub.
-    let subscribeChannels: [Subscribable] = [
-        Channel.Ticker.ticker_fx_btc_jpy, // observe ticker.
-        Channel.Diff.board_fx_btc_jpy, // observe diff of order books.
-        Channel.Execution.execution_fx_btc_jpy, // observe execution histories.
-        Channel.SnapShot.boardSnap_btc_jpy, // observe board snapshot.
+    // Set channels for subscribing realtime api from bitFlyer RealTimeAPI by using JSON RPC over WebSocket.
+    let subscribeChannels: [String] = [
+    Channel.SnapShot.boardSnap_fx_btc_jpy.targetChannel,
+    Channel.Board.board_fx_btc_jpy.targetChannel,
+    Channel.Ticker.ticker_fx_btc_jpy.targetChannel,
+    Channel.Execution.execution_fx_btc_jpy.targetChannel
     ]
 
     // Start observing realtime API.
@@ -119,7 +120,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Set realtime API delegate for get your setted object from PubNub.
+        // Set realtime API delegate for get your setted object.
         realtime.delegate = self
     }
 }

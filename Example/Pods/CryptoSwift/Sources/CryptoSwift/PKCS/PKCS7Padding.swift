@@ -18,6 +18,7 @@
 //
 
 struct PKCS7Padding: PaddingProtocol {
+
     enum Error: Swift.Error {
         case invalidPaddingValue
     }

@@ -16,20 +16,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
-        // For access private API.
+        // (Optional) Set your API keys, if you access to private API.
         BitFlyer.apiKey = "Your API Key"
         BitFlyer.apiSecretKey = "Your API Secret Key"
-
-        // These are optional settings.
-        // If you want retrive realtime information from PubNub, set channels and call `subscribe` of RealTimeAPI.
+     
+        // (Optional) If you want retrive realtime information, set channels and call `subscribe` of RealTimeAPI.
         typealias Channel = RealTimeAPI.SubscribeChannel
 
-        // Set channels for subscribing realtime api from PubNub.
-        let subscribeChannels: [PubNubSubscribable] = [
-//            Channel.Ticker.ticker_fx_btc_jpy
+        // Set channels for subscribing realtime api from bitFlyer RealTimeAPI by using JSON RPC over WebSocket.
+        let subscribeChannels: [String] = [
+            Channel.SnapShot.boardSnap_fx_btc_jpy.targetChannel,
+            Channel.Board.board_fx_btc_jpy.targetChannel,
+            Channel.Ticker.ticker_fx_btc_jpy.targetChannel,
+            Channel.Execution.execution_fx_btc_jpy.targetChannel
         ]
 
-        // Start observing realtime api.
+        // Start observing realtime API.
         RealTimeAPI.shared.subscribe(with: subscribeChannels)
         
         return true

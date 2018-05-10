@@ -19,6 +19,7 @@ public enum Bit: Int {
 }
 
 extension Bit {
+
     func inverted() -> Bit {
         return self == .zero ? .one : .zero
     }
