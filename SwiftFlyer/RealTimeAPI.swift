@@ -140,6 +140,10 @@ public final class RealTimeAPI: NSObject {
                 me.delegate?.didReceiveExecution(executions)
             }
         }
+        
+        webSocket.event.close = { [weak self] _,_,_ in
+            self!.webSocket.open() // reopen the socket to the previous url
+        }
     }
     
     public func subscribe(with channels: [String]) {
