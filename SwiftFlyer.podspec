@@ -15,5 +15,5 @@ An API wrapper for bitFlyer that supports all providing API.
   s.osx.deployment_target = '10.11'
   s.source_files = 'SwiftFlyer/**/*'
   s.dependency 'CryptoSwift', '~> 0.8.3'
-  s.dependency 'SwiftWebSocket', '~> 3.0.5'
+  s.dependency 'Starscream', '~> 3.0.5'
 end
