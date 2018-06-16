@@ -1,0 +1,43 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "CryptoSwift",
+        "repositoryURL": "https://github.com/krzyzanowskim/CryptoSwift.git",
+        "state": {
+          "branch": null,
+          "revision": "f2ca9c377d4b44596a131e37eeb908221fb6e6be",
+          "version": "0.8.3"
+        }
+      },
+      {
+        "package": "SSCZLib",
+        "repositoryURL": "https://github.com/c-bata/zlib-spm.git",
+        "state": {
+          "branch": "master",
+          "revision": "0ae9a8ce2260b0a93feaca085e79302ea333978a",
+          "version": null
+        }
+      },
+      {
+        "package": "SSCommonCrypto",
+        "repositoryURL": "https://github.com/daltoniam/common-crypto-spm",
+        "state": {
+          "branch": null,
+          "revision": "2eb3aff0fb57f92f5722fac5d6d20bf64669ca66",
+          "version": "1.1.0"
+        }
+      },
+      {
+        "package": "Starscream",
+        "repositoryURL": "https://github.com/c-bata/Starscream.git",
+        "state": {
+          "branch": "master",
+          "revision": "9c0bf5a65ddf81616cd17e67454c4531c44672e6",
+          "version": null
+        }
+      }
+    ]
+  },
+  "version": 1
+}
