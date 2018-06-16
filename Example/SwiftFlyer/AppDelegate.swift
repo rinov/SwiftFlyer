@@ -31,8 +31,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             Channel.Execution.execution_fx_btc_jpy.targetChannel
         ]
 
-        // Start observing realtime API.
-        RealTimeAPI.shared.subscribe(with: subscribeChannels)
+        // Set subscribe channels.
+        RealTimeAPI.shared.setSubscribeChannels(with:  subscribeChannels)
+        
+        // Start observing realtime API
+        RealTimeAPI.shared.connect()
         
         return true
     }

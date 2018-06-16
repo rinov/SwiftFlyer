@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import SwiftWebSocket
+import Starscream
 
 public final class RealTimeAPI: NSObject {
 
@@ -59,6 +59,16 @@ public final class RealTimeAPI: NSObject {
     }
 
     public weak var delegate: RealTimeAPIDelegate?
+
+    public var isEnabledCompression: Bool = true {
+        didSet {
+            webSocket.enableCompression = isEnabledCompression
+        }
+    }
+
+    public var isConnected: Bool {
+        return webSocket.isConnected
+    }
 
     private struct JSONRPC: Decodable {
         let version: String
@@ -119,17 +129,23 @@ public final class RealTimeAPI: NSObject {
         let params: [String: String]
     }
 
-    private let webSocket = WebSocket("wss://ws.lightstream.bitflyer.com/json-rpc")
+    private var subscribeChannels: [String] = []
+    
+    private let webSocket = WebSocket(url: URL(string: "wss://ws.lightstream.bitflyer.com/json-rpc")!)
     private let decoder = JSONDecoder()
     
     private override init() {
         super.init()
-        webSocket.event.message = { [weak self] message in
+        
+        webSocket.onDisconnect = { [weak self] error in
+            self?.delegate?.onDisconnect(error)
+        }
+        
+        webSocket.onText = { [weak self] text in
             guard let me = self,
-                let json = message as? String,
-                let data = json.data(using: .utf8),
+                let data = text.data(using: .utf8),
                 let response = try? JSONDecoder().decode(JSONRPC.self, from: data) else { return }
-
+            
             if let snapshot = response.params.snapshot {
                 me.delegate?.didReceiveSnapShot(snapshot)
             } else if let board = response.params.board {
@@ -140,17 +156,29 @@ public final class RealTimeAPI: NSObject {
                 me.delegate?.didReceiveExecution(executions)
             }
         }
+ 
     }
     
-    public func subscribe(with channels: [String]) {
-        webSocket.event.open = { [weak self] in
+    public func setSubscribeChannels(with channels: [String]) {
+        self.subscribeChannels = channels
+    }
+    
+    public func connect() {
+        webSocket.onConnect = { [weak self] in
             guard let me = self else { return }
-            channels.forEach { channelName in
-                let request = LSRequest(method: "subscribe", params: ["channel": channelName])
+            me.subscribeChannels.forEach { channel in
+                let request = LSRequest(method: "subscribe", params: ["channel": channel])
                 guard let data = try? JSONEncoder().encode(request),
-                    let json = String(data: data, encoding: .utf8) else { return }
-                me.webSocket.send(json)
+                    let message = String(data: data, encoding: .utf8) else { return }
+                me.webSocket.write(string: message)
             }
+            me.delegate?.onConnect()
         }
+
+        webSocket.connect()
+    }
+    
+    public func disconnect() {
+        webSocket.disconnect()
     }
 }

@@ -45,7 +45,7 @@ final class ViewController: UIViewController, UITableViewDelegate, UITableViewDa
             case .failed(let e):
                 print("Error=\(e)")
             }
-        }
+        }        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -84,5 +84,13 @@ extension UIViewController: RealTimeAPIDelegate {
     
     public func didReceiveExecution(_ executions: [Execution]) {
         print(executions)
+    }
+    
+    public func onConnect() {
+        print("Connected to realtime API")
+    }
+    
+    public func onDisconnect(_ error: Error?) {
+        print("Disconnected to realtime API")
     }
 }

@@ -10,4 +10,6 @@ public protocol RealTimeAPIDelegate: class {
     func didReceiveBoardDiff(_ board: Board)
     func didReceiveTicker(_ ticker: Ticker)
     func didReceiveExecution(_ executions: [Execution])
+    func onConnect()
+    func onDisconnect(_ error: Error?)
 }
