@@ -30,10 +30,10 @@ public final class PostChildOrderRequest: Requestable {
         json.appendingQueryParameter(key: "product_code", value: productCode)
         json.appendingQueryParameter(key: "child_order_type", value: childOrderType)
         json.appendingQueryParameter(key: "side", value: side)
-        json.appendingQueryParameter(key: "size", value: size)
         json.appendingQueryParameter(key: "price", value: price)
         json.appendingQueryParameter(key: "minute_to_expire", value: minuteToExpire)
         json.appendingQueryParameter(key: "time_in_force", value: timeInForce)
+        json["size"] = "\(size)"
         
         let jsonData = try? JSONSerialization.data(withJSONObject: json, options: [.prettyPrinted])
 
@@ -44,7 +44,7 @@ public final class PostChildOrderRequest: Requestable {
     public let childOrderType: ChildOrderType
     public let side: PositionSide
     public let price: Double?
-    public let size: Float
+    public let size: Double
     public let minuteToExpire: Int?
     public let timeInForce: TimeInForce?
     
@@ -52,7 +52,7 @@ public final class PostChildOrderRequest: Requestable {
                 childOrderType: ChildOrderType,
                 side: PositionSide,
                 price: Double?,
-                size: Float,
+                size: Double,
                 minuteToExpire: Int? = nil,
                 timeInForce: TimeInForce? = nil
                 ) {

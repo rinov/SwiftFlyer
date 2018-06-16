@@ -14,11 +14,11 @@ public struct Order {
     public let side: PositionSide
     public let price: Double?
     public let triggerPrice: Double?
-    public let size: Float
+    public let size: Double
     public let offset: Int?
     public let timeInForce: TimeInForce?
 
-    public init(productCode: ProductCode, conditionType: ConditionType, side: PositionSide, price: Double?, triggerPrice: Double?, size: Float, offset: Int?, timeInForce: TimeInForce?) {
+    public init(productCode: ProductCode, conditionType: ConditionType, side: PositionSide, price: Double?, triggerPrice: Double?, size: Double, offset: Int?, timeInForce: TimeInForce?) {
         self.productCode = productCode
         self.conditionType = conditionType
         self.side = side

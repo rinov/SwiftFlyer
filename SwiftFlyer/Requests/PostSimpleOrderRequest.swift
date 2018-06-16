@@ -36,10 +36,10 @@ public final class PostSimpleOrderRequest: Requestable {
         parameter.appendingQueryParameter(key: "product_code", value: order.productCode)
         parameter.appendingQueryParameter(key: "condition_type", value: order.conditionType)
         parameter.appendingQueryParameter(key: "side", value: order.side)
-        parameter.appendingQueryParameter(key: "size", value: order.size)
         parameter.appendingQueryParameter(key: "price", value: order.price)
         parameter.appendingQueryParameter(key: "trigger_price", value: order.triggerPrice)
         parameter.appendingQueryParameter(key: "offset", value: order.offset)
+        parameter["size"] = "\(order.size)"
 
         json["parameters"] = [parameter]
         
