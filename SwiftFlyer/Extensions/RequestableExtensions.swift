@@ -9,7 +9,7 @@
 import  Foundation
 import CryptoSwift
 
-public extension Requestable {
+extension Requestable {
     
     public var baseURL: URL {
         return URL(string: "https://api.bitflyer.jp")!

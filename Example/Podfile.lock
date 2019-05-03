@@ -1,28 +1,35 @@
 PODS:
-  - CryptoSwift (0.8.3)
-  - Nimble (7.0.3)
-  - Quick (1.2.0)
-  - Starscream (3.0.5)
-  - SwiftFlyer (0.2.1):
-    - CryptoSwift (~> 0.8.3)
-    - Starscream (~> 3.0.5)
+  - CryptoSwift (1.0.0)
+  - Nimble (8.0.1)
+  - Quick (2.1.0)
+  - Starscream (3.1.0)
+  - SwiftFlyer (0.2.2):
+    - CryptoSwift (~> 1.0.0)
+    - Starscream (~> 3.1.0)
 
 DEPENDENCIES:
-  - Nimble (~> 7.0.2)
-  - Quick (~> 1.2.0)
+  - Nimble (~> 8.0.1)
+  - Quick (~> 2.1.0)
   - SwiftFlyer (from `../`)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - CryptoSwift
+    - Nimble
+    - Quick
+    - Starscream
 
 EXTERNAL SOURCES:
   SwiftFlyer:
-    :path: ../
+    :path: "../"
 
 SPEC CHECKSUMS:
-  CryptoSwift: 033efc3523865d19cc6ab6612fa17a62613b5dfa
-  Nimble: 7f5a9c447a33002645a071bddafbfb24ea70e0ac
-  Quick: 58d203b1c5e27fff7229c4c1ae445ad7069a7a08
-  Starscream: faf918b2f2eff7d5dd21180646bf015a669673bd
-  SwiftFlyer: d0489dd470b4f30eacec1986e2f4898f5eaa00e8
+  CryptoSwift: d81eeaa59dc5a8d03720fe919a6fd07b51f7439f
+  Nimble: 45f786ae66faa9a709624227fae502db55a8bdd0
+  Quick: 4be43f6634acfa727dd106bdf3929ce125ffa79d
+  Starscream: 08172b481e145289c4930cb567230fb55897cfa4
+  SwiftFlyer: b3cafbb99c1c6f85e70c9c7e151dc5abf82c1930
 
-PODFILE CHECKSUM: 0e2e09933c4a5d391753b4d68ab707c15f8357d7
+PODFILE CHECKSUM: 51db0d67ea0f7430370160be49ec1abad8580887
 
-COCOAPODS: 1.4.0
+COCOAPODS: 1.6.0

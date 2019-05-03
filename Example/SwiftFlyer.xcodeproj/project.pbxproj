@@ -48,7 +48,7 @@
 		9FDD5B242DBB417DC4748C15 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		BD63FEFE4959D4328F3D5EB4 /* Pods-SwiftFlyer_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftFlyer_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftFlyer_Tests/Pods-SwiftFlyer_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		C08A3A4F508106C600E9729D /* Pods-SwiftFlyer_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftFlyer_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftFlyer_Tests/Pods-SwiftFlyer_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		EAFEA9E529612DBA4F3A8A87 /* SwiftFlyer.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = SwiftFlyer.podspec; path = ../SwiftFlyer.podspec; sourceTree = "<group>"; };
+		EAFEA9E529612DBA4F3A8A87 /* SwiftFlyer.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = SwiftFlyer.podspec; path = ../SwiftFlyer.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		EF5234AE692960EE2000C099 /* Pods_SwiftFlyer_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftFlyer_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF816D15DD89B3D6FE2FE453 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -177,7 +177,6 @@
 				607FACCD1AFB9204008FA782 /* Frameworks */,
 				607FACCE1AFB9204008FA782 /* Resources */,
 				A893F7E73B2CCFFA24DE6E81 /* [CP] Embed Pods Frameworks */,
-				921303AE893133DAED1B1246 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -197,7 +196,6 @@
 				607FACE21AFB9204008FA782 /* Frameworks */,
 				607FACE31AFB9204008FA782 /* Resources */,
 				18DFB9CDA6C71A83C8A21B38 /* [CP] Embed Pods Frameworks */,
-				E5F4A5C6781D9BFC93D7D8EB /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -235,6 +233,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -277,7 +276,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-SwiftFlyer_Tests/Pods-SwiftFlyer_Tests-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-SwiftFlyer_Tests/Pods-SwiftFlyer_Tests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Nimble/Nimble.framework",
 				"${BUILT_PRODUCTS_DIR}/Quick/Quick.framework",
 			);
@@ -288,7 +287,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SwiftFlyer_Tests/Pods-SwiftFlyer_Tests-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SwiftFlyer_Tests/Pods-SwiftFlyer_Tests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		35901204AA4EF62FD5BE6D0A /* [CP] Check Pods Manifest.lock */ = {
@@ -309,28 +308,13 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		921303AE893133DAED1B1246 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SwiftFlyer_Example/Pods-SwiftFlyer_Example-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		A893F7E73B2CCFFA24DE6E81 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-SwiftFlyer_Example/Pods-SwiftFlyer_Example-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-SwiftFlyer_Example/Pods-SwiftFlyer_Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/CryptoSwift/CryptoSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Starscream/Starscream.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftFlyer/SwiftFlyer.framework",
@@ -343,22 +327,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SwiftFlyer_Example/Pods-SwiftFlyer_Example-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E5F4A5C6781D9BFC93D7D8EB /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SwiftFlyer_Tests/Pods-SwiftFlyer_Tests-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SwiftFlyer_Example/Pods-SwiftFlyer_Example-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FB96DB7897299587951DF95F /* [CP] Check Pods Manifest.lock */ = {
@@ -542,7 +511,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -557,7 +526,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -578,7 +547,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -595,7 +564,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};

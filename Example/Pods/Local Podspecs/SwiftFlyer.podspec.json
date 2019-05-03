@@ -1,6 +1,6 @@
 {
   "name": "SwiftFlyer",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "summary": "An API wrapper for bitFlyer written in Swift.",
   "description": "An API wrapper for bitFlyer that supports all providing API.",
   "homepage": "https://github.com/rinov/SwiftFlyer",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/rinov/SwiftFlyer.git",
-    "tag": "0.2.1"
+    "tag": "0.2.2"
   },
   "platforms": {
     "ios": "9.0",
@@ -22,10 +22,10 @@
   "source_files": "SwiftFlyer/**/*",
   "dependencies": {
     "CryptoSwift": [
-      "~> 0.8.3"
+      "~> 1.0.0"
     ],
     "Starscream": [
-      "~> 3.0.5"
+      "~> 3.1.0"
     ]
   }
 }
